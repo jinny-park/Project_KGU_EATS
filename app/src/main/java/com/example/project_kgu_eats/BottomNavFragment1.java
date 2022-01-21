@@ -18,10 +18,15 @@ import java.util.ArrayList;
 public class BottomNavFragment1 extends Fragment {
 
     RecyclerView recyclerView;
-    AdapterBottomFrag1 adapter ;
+
     ArrayList<ResItem> list = new ArrayList<>();
+
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+//        adapter = new AdapterBottomFrag1(getActivity(), list);
+//        adapter.addItem(new ResItem("이스퀘어", R.drawable.esquare));
+//        adapter.addItem(new ResItem("감성코어", R.drawable.gamco));
+//        adapter.addItem(new ResItem("기숙사식당", R.drawable.dorm));
 
     }
 
@@ -34,15 +39,10 @@ public class BottomNavFragment1 extends Fragment {
         recyclerView = view.findViewById(R.id.recyclerView1);
         recyclerView.setHasFixedSize(true);
 
-        adapter = new AdapterBottomFrag1(getActivity(), list);
-        adapter.addItem(new ResItem("이스퀘어", R.drawable.esquare));
-        adapter.addItem(new ResItem("감성코어", R.drawable.gamco));
-        adapter.addItem(new ResItem("기숙사식당", R.drawable.dorm));
-
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getActivity(),2);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(LoginActivity.adapter);
         return view;
 
 //        RelativeLayout layout = (RelativeLayout)inflater.inflate(R.layout.fragment_fragment2,
