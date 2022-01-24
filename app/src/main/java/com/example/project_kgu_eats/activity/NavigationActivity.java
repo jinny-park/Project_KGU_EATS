@@ -1,14 +1,12 @@
-package com.example.project_kgu_eats;
+package com.example.project_kgu_eats.activity;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import androidx.annotation.FloatRange;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
+import com.example.project_kgu_eats.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class NavigationActivity extends AppCompatActivity {

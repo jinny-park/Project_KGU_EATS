@@ -1,8 +1,10 @@
-package com.example.project_kgu_eats;
+package com.example.project_kgu_eats.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.project_kgu_eats.R;
 
 public class MainTabActivity extends AppCompatActivity {
 

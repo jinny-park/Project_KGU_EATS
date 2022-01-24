@@ -1,10 +1,8 @@
-package com.example.project_kgu_eats;
+package com.example.project_kgu_eats.activity;
 
 
-import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.util.Log;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +11,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.project_kgu_eats.R;
+import com.example.project_kgu_eats.data.ResItem;
+
 import java.util.ArrayList;
 
 public class AdapterBottomFrag1 extends RecyclerView.Adapter<AdapterBottomFrag1.ViewHolder> {
@@ -37,7 +39,6 @@ public class AdapterBottomFrag1 extends RecyclerView.Adapter<AdapterBottomFrag1.
         ResItem item =arrayList.get(position);
         holder.imageView.setImageResource(arrayList.get(position).image);
         holder.textView.setText(arrayList.get(position).name);
-//        holder.setItem(item);
     }
 
     @Override
@@ -53,12 +54,22 @@ public class AdapterBottomFrag1 extends RecyclerView.Adapter<AdapterBottomFrag1.
             super(itemView);
             imageView = itemView.findViewById(R.id.view_item);
             textView = itemView.findViewById(R.id.text_item);
+
+            itemView.setClickable(true);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int pos = getAdapterPosition();
+                    if(pos != RecyclerView.NO_POSITION){
+//                        Intent intent = new Intent(context, NavigationActivity.class);
+//                        startActivity(intent);
+                    }
+                }
+            });
+
+
         }
-//        @SuppressLint("ResourceType")
-//        public void setItem(ResItem item){
-//            imageView.setImageResource(R.drawable.logo);
-//            textView.setText(R.id.text_item);
-//        }
+
     }
 
     public void addItem(ResItem item){

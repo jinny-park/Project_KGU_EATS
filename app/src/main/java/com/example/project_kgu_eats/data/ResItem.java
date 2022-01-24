@@ -1,8 +1,8 @@
-package com.example.project_kgu_eats;
+package com.example.project_kgu_eats.data;
 
 public class ResItem {
-    String name;
-    int image;
+    public String name;
+    public int image;
 
     public int getImage() {
         return image;
