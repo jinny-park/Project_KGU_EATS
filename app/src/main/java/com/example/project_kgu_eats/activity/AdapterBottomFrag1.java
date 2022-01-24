@@ -14,24 +14,28 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project_kgu_eats.R;
 import com.example.project_kgu_eats.data.ResItem;
+import com.example.project_kgu_eats.interface_structure.OnCardItemClickListener;
 
 import java.util.ArrayList;
 
-public class AdapterBottomFrag1 extends RecyclerView.Adapter<AdapterBottomFrag1.ViewHolder> {
+public class AdapterBottomFrag1 extends RecyclerView.Adapter<AdapterBottomFrag1.ViewHolder>
+                                    implements OnCardItemClickListener{
 
     private Context context;
     private ArrayList<ResItem> arrayList;
+    public OnCardItemClickListener listener;
 
     public AdapterBottomFrag1(Context context, ArrayList<ResItem> arrayList){
         this.context = context ;
         this.arrayList= arrayList;
     }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View itemView = layoutInflater.inflate(R.layout.frag1_view_item, parent, false);
-        return new ViewHolder(itemView);
+        return new ViewHolder(itemView, this);
     }
 
     @Override
@@ -41,16 +45,29 @@ public class AdapterBottomFrag1 extends RecyclerView.Adapter<AdapterBottomFrag1.
         holder.textView.setText(arrayList.get(position).name);
     }
 
+    public void setOnItemClicklistener(OnCardItemClickListener listener){
+
+        this.listener = listener;
+    }
+
+        @Override
+        public void onItemClick(ViewHolder holder, View view, int position) {
+        if(listener != null){
+            listener.onItemClick(holder,view,position);
+        }
+    }
+
+
     @Override
     public int getItemCount() {
         return arrayList.size();
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder{
         TextView textView;
         ImageView imageView;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView, final OnCardItemClickListener listener) {
             super(itemView);
             imageView = itemView.findViewById(R.id.view_item);
             textView = itemView.findViewById(R.id.text_item);
@@ -59,11 +76,16 @@ public class AdapterBottomFrag1 extends RecyclerView.Adapter<AdapterBottomFrag1.
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    int pos = getAdapterPosition();
-                    if(pos != RecyclerView.NO_POSITION){
-//                        Intent intent = new Intent(context, NavigationActivity.class);
-//                        startActivity(intent);
+                    int position = getAdapterPosition();
+                    if(listener != null){
+                        listener.onItemClick(ViewHolder.this, view, position);
                     }
+
+//                    int pos = getAdapterPosition();
+//                    if(pos != RecyclerView.NO_POSITION){
+//                        Intent intent = new Intent(, NavigationActivity.class);
+//                        startActivity(intent);
+//                    }
                 }
             });
 

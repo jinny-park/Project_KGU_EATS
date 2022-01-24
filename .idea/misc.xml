@@ -12,12 +12,16 @@
         <entry key="..\:/Project_KGU_EATS/app/src/main/res/layout/activity_login.xml" value="0.4" />
         <entry key="..\:/Project_KGU_EATS/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
         <entry key="..\:/Project_KGU_EATS/app/src/main/res/layout/activity_main_info.xml" value="0.25364583333333335" />
+        <entry key="..\:/Project_KGU_EATS/app/src/main/res/layout/activity_main_info_fragment2.xml" value="0.25364583333333335" />
         <entry key="..\:/Project_KGU_EATS/app/src/main/res/layout/activity_main_tab.xml" value="0.1" />
         <entry key="..\:/Project_KGU_EATS/app/src/main/res/layout/activity_navigation.xml" value="0.1" />
         <entry key="..\:/Project_KGU_EATS/app/src/main/res/layout/activity_recyclerbottomfrag.xml" value="0.10948905109489052" />
         <entry key="..\:/Project_KGU_EATS/app/src/main/res/layout/bottom_fragment1.xml" value="0.25364583333333335" />
         <entry key="..\:/Project_KGU_EATS/app/src/main/res/layout/bottom_fragment2.xml" value="0.25364583333333335" />
         <entry key="..\:/Project_KGU_EATS/app/src/main/res/layout/frag1_view_item.xml" value="0.264" />
+        <entry key="..\:/Project_KGU_EATS/app/src/main/res/layout/fragment_tabinfo.xml" value="0.25364583333333335" />
+        <entry key="..\:/Project_KGU_EATS/app/src/main/res/layout/fragment_tabmenu.xml" value="0.25364583333333335" />
+        <entry key="..\:/Project_KGU_EATS/app/src/main/res/layout/fragment_tabreview.xml" value="0.25364583333333335" />
         <entry key="..\:/Project_KGU_EATS/app/src/main/res/menu/bottom_menu.xml" value="0.2390625" />
       </map>
     </option>

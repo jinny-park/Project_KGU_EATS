@@ -1,5 +1,6 @@
 package com.example.project_kgu_eats.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,22 +14,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project_kgu_eats.R;
 import com.example.project_kgu_eats.data.ResItem;
+import com.example.project_kgu_eats.interface_structure.OnCardItemClickListener;
 
 import java.util.ArrayList;
 
 public class BottomNavFragment1 extends Fragment {
 
     RecyclerView recyclerView;
-
     ArrayList<ResItem> list = new ArrayList<>();
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-//        adapter = new AdapterBottomFrag1(getActivity(), list);
-//        adapter.addItem(new ResItem("이스퀘어", R.drawable.esquare));
-//        adapter.addItem(new ResItem("감성코어", R.drawable.gamco));
-//        adapter.addItem(new ResItem("기숙사식당", R.drawable.dorm));
-
     }
 
     @Nullable
@@ -44,6 +40,15 @@ public class BottomNavFragment1 extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(LoginActivity.adapter);
+
+        LoginActivity.adapter.setOnItemClicklistener(new OnCardItemClickListener() {
+            @Override public void onItemClick(AdapterBottomFrag1.ViewHolder holder, View view, int position) {
+                if (position != RecyclerView.NO_POSITION) {
+                    Intent intent = new Intent(getActivity(), MainTabActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
 
         return view;
 

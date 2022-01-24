@@ -11,15 +11,41 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#364fa3"
+                android:elevation="1dp"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark">
+            </androidx.appcompat.widget.Toolbar>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:elevation="1dp"
+                app:tabGravity="fill"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="#364fa3"
+                app:tabTextColor="#3a3a3a"
+                app:tabIndicatorHeight="3dp"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
         <FrameLayout
-            android:id="@+id/bottom_container"
+            android:id="@+id/tab_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior = "@string/appbar_scrolling_view_behavior">
         </FrameLayout>
 
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
