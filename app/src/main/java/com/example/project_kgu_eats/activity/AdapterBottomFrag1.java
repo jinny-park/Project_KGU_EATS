@@ -2,7 +2,6 @@ package com.example.project_kgu_eats.activity;
 
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,7 +33,7 @@ public class AdapterBottomFrag1 extends RecyclerView.Adapter<AdapterBottomFrag1.
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View itemView = layoutInflater.inflate(R.layout.frag1_view_item, parent, false);
+        View itemView = layoutInflater.inflate(R.layout.fragment_rest_item, parent, false);
         return new ViewHolder(itemView, this);
     }
 
@@ -70,7 +69,7 @@ public class AdapterBottomFrag1 extends RecyclerView.Adapter<AdapterBottomFrag1.
         public ViewHolder(@NonNull View itemView, final OnCardItemClickListener listener) {
             super(itemView);
             imageView = itemView.findViewById(R.id.view_item);
-            textView = itemView.findViewById(R.id.text_item);
+            textView = itemView.findViewById(R.id.menu_name);
 
             itemView.setClickable(true);
             itemView.setOnClickListener(new View.OnClickListener() {
