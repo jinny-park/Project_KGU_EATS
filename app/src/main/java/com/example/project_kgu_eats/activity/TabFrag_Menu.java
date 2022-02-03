@@ -15,14 +15,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project_kgu_eats.R;
 import com.example.project_kgu_eats.data.ResItem;
+import com.example.project_kgu_eats.data.menuItem;
 import com.example.project_kgu_eats.interface_structure.OnCardItemClickListener;
+import com.example.project_kgu_eats.interface_structure.OnClickMenuItemListener;
 
 import java.util.ArrayList;
 
 public class TabFrag_Menu extends Fragment {
 
     RecyclerView recyclerView;
-    ArrayList<ResItem> list = new ArrayList<>();
+    ArrayList<menuItem> menuList = new ArrayList<>();
+    MenuListAdapter menuListAdapter = new MenuListAdapter(getContext(),menuList);
+
 
     @Override
     public View onCreateView(@Nullable LayoutInflater inflater, @Nullable ViewGroup container,
@@ -30,22 +34,22 @@ public class TabFrag_Menu extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_tabmenu,null);
 
-        recyclerView = view.findViewById(R.id.recyclerView1);
+        recyclerView = view.findViewById(R.id.recyclerView2);
         recyclerView.setHasFixedSize(true);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(LoginActivity.adapter);
+        recyclerView.setAdapter(menuListAdapter);
 
-//        LoginActivity.adapter.setOnItemClicklistener(new OnCardItemClickListener() {
-//            @Override public void onItemClick(AdapterBottomFrag1.ViewHolder holder, View view, int position) {
+        menuListAdapter.setOnClickMenuItemListener(new OnClickMenuItemListener() {
+            @Override public void onItemClick(MenuListAdapter.ViewHolder holder, View view, int position) {
 //                if (position != RecyclerView.NO_POSITION) {
 //                    Intent intent = new Intent(getActivity(), MainTabActivity.class);
 //                    startActivity(intent);
 //                }
-//            }
-//        });
+            }
+        });
 
         return view;
     }

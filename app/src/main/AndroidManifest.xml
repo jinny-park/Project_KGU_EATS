@@ -24,6 +24,7 @@
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".activity.NavigationActivity" />
         <activity android:name=".activity.MainTabActivity" />
+        <activity android:name=".activity.ReviewAddActivity" />
 
     </application>
 </manifest>

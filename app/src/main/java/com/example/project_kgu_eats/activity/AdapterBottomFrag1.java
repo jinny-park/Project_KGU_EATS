@@ -44,7 +44,7 @@ public class AdapterBottomFrag1 extends RecyclerView.Adapter<AdapterBottomFrag1.
         holder.textView.setText(arrayList.get(position).name);
     }
 
-    public void setOnItemClicklistener(OnCardItemClickListener listener){
+    public void setOnCardItemClickListener(OnCardItemClickListener listener){
 
         this.listener = listener;
     }
@@ -79,12 +79,6 @@ public class AdapterBottomFrag1 extends RecyclerView.Adapter<AdapterBottomFrag1.
                     if(listener != null){
                         listener.onItemClick(ViewHolder.this, view, position);
                     }
-
-//                    int pos = getAdapterPosition();
-//                    if(pos != RecyclerView.NO_POSITION){
-//                        Intent intent = new Intent(, NavigationActivity.class);
-//                        startActivity(intent);
-//                    }
                 }
             });
 
@@ -111,79 +105,4 @@ public class AdapterBottomFrag1 extends RecyclerView.Adapter<AdapterBottomFrag1.
         arrayList.set(position, item);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    private ArrayList<RecyclerBottomFragActivity.item> mDataset; //MainActivity에 item class를 정의해 놓았음
-//
-//    // Provide a reference to the views for each data item
-//    // Complex data items may need more than one view per item, and
-//    // you provide access to all the views for a data item in a view holder
-//    public static class ViewHolder extends RecyclerView.ViewHolder {
-//        // 사용될 항목들 선언
-//        public ImageView view_item;
-//
-//        public ViewHolder(View v) {
-//            super(v);
-//            view_item = (ImageView) v.findViewById(R.id.view_item);
-//        }
-//    }
-//
-//    // 생성자 - 넘어 오는 데이터파입에 유의해야 한다.
-//    public AdapterBottomFrag1(ArrayList<RecyclerBottomFragActivity.item> myDataset) {
-//        mDataset = myDataset;
-//    }
-//
-//
-//    //뷰홀더
-//    // Create new views (invoked by the layout manager)
-//    @Override
-//    public AdapterBottomFrag1.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-//        // create a new view
-//        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_item, parent, false);
-//        // set the view's size, margins, paddings and layout parameters
-//
-//        ViewHolder holder = new ViewHolder(v);
-//        return holder;
-//    }
-//
-//    // Replace the contents of a view (invoked by the layout manager)
-//    @Override
-//    public void onBindViewHolder(ViewHolder holder, int position) {
-//
-//        holder.view_item.setImageDrawable(logo.png);
-//        //holder.mPhoto.setImageBitmap(mDataset.get(position).getPhoto()); //첨부된 이미지를 연결해줘야 하는데 이건 또 복잡하다. 이건 나중에...
-//
-//    }
-//
-//    @Override
-//    public int getItemCount() {
-//        return mDataset.size();
-//    }
 }

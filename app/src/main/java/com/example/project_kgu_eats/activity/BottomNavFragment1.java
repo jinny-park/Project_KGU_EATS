@@ -41,7 +41,7 @@ public class BottomNavFragment1 extends Fragment {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(LoginActivity.adapter);
 
-        LoginActivity.adapter.setOnItemClicklistener(new OnCardItemClickListener() {
+        LoginActivity.adapter.setOnCardItemClickListener(new OnCardItemClickListener() {
             @Override public void onItemClick(AdapterBottomFrag1.ViewHolder holder, View view, int position) {
                 if (position != RecyclerView.NO_POSITION) {
                     Intent intent = new Intent(getActivity(), MainTabActivity.class);
