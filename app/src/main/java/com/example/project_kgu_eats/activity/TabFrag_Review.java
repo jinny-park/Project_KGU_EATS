@@ -22,8 +22,6 @@ public class TabFrag_Review extends Fragment {
     RecyclerView recyclerView;
    private ArrayList<ReviewItem> reviewList = new ArrayList<>();
 
-    Button reviewButton;
-
     @Override
     public View onCreateView(@Nullable LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -38,7 +36,7 @@ public class TabFrag_Review extends Fragment {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(LoginActivity.reviewAdapter);
 
-        reviewButton = (Button) view.findViewById(R.id.review_btn);
+        Button reviewButton = (Button) view.findViewById(R.id.review_btn);
         reviewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

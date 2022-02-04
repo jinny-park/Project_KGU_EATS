@@ -75,8 +75,7 @@
             android:adjustViewBounds="true"
             android:maxWidth="200dp"
             android:maxHeight="200dp"
-            android:onClick="onClick"
-            app:srcCompat="@style/Widget.AppCompat.ImageButton" />
+            android:src="@drawable/logo"/>
 
 
     </LinearLayout>
