@@ -11,9 +11,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class NavigationActivity extends AppCompatActivity {
 
-
    BottomNavFragment1 fragment1;
    BottomNavFragment2 fragment2;
+   BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,9 +22,9 @@ public class NavigationActivity extends AppCompatActivity {
 
         fragment1 = new BottomNavFragment1();
         fragment2 = new BottomNavFragment2();
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.bottom_container,fragment1).commit();
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        getSupportFragmentManager().beginTransaction().add(R.id.bottom_container,fragment1).addToBackStack(null).commit();
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

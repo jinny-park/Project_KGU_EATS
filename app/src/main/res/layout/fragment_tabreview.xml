@@ -16,9 +16,13 @@
 
         <Button
             android:id="@+id/review_btn"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
             android:background="@drawable/border_button"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:fontFamily="sans-serif-black"
             android:text="리뷰쓰기"
             android:textColor="@color/black"
@@ -39,6 +43,5 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
         </ScrollView>
-
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

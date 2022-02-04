@@ -10,16 +10,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project_kgu_eats.R;
-import com.example.project_kgu_eats.data.review;
+import com.example.project_kgu_eats.data.ReviewItem;
 
 import java.util.ArrayList;
 
 public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ViewHolder>{
 
     private Context context;
-    private ArrayList<review> reviewList;
+    private ArrayList<ReviewItem> reviewList;
 
-    public ReviewAdapter(Context context, ArrayList<review> arrayList){
+    public ReviewAdapter(Context context, ArrayList<ReviewItem> arrayList){
         this.context = context ;
         this.reviewList= arrayList;
     }
@@ -34,7 +34,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ReviewAdapter.ViewHolder holder, int position) {
-        review item =reviewList.get(position);
+        ReviewItem item =reviewList.get(position);
         holder.username.setText(reviewList.get(position).getUserName());
         holder.comment.setText(reviewList.get(position).getComment());
     }
@@ -57,20 +57,20 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ViewHolder
 
     }
 
-    public void addItem(review item){
+    public void addItem(ReviewItem item){
         reviewList.add(item);
     }
-    public void setarrayList(ArrayList<review> arrayList) {
+    public void setarrayList(ArrayList<ReviewItem> arrayList) {
 
         this.reviewList = arrayList;
     }
 
-    public review getItem(int position) {
+    public ReviewItem getItem(int position) {
 
         return reviewList.get(position);
     }
 
-    public void setItem(int position, review item) {
+    public void setItem(int position, ReviewItem item) {
 
         reviewList.set(position, item);
     }

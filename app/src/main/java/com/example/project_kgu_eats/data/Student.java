@@ -1,12 +1,12 @@
 package com.example.project_kgu_eats.data;
 
-public class student {
+public class Student {
 
     int id;
     String userName;
     String password;
 
-    public student(int id, String userName, String password) {
+    public Student(int id, String userName, String password) {
         this.id = id;
         this.userName = userName;
         this.password = password;

@@ -1,11 +1,11 @@
 package com.example.project_kgu_eats.data;
 
-public class menuItem {
+public class MenuItem {
 
     String menuName;
-    int price;
+    String price;
 
-    public menuItem(String menuName, int price) {
+    public MenuItem(String menuName, String price) {
         this.menuName = menuName;
         this.price = price;
     }
@@ -18,11 +18,11 @@ public class menuItem {
         this.menuName = menuName;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 }

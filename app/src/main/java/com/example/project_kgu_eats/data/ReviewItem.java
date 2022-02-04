@@ -1,11 +1,12 @@
 package com.example.project_kgu_eats.data;
 
-public class review {
+public class ReviewItem {
 
     String userName;
     String comment;
 
-    public review(String userName, String comment) {
+
+    public ReviewItem(String userName, String comment) {
         this.userName = userName;
         this.comment = comment;
     }

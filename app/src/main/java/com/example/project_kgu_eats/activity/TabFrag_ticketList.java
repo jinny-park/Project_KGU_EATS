@@ -1,11 +1,9 @@
 package com.example.project_kgu_eats.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -14,14 +12,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project_kgu_eats.R;
-import com.example.project_kgu_eats.data.review;
+import com.example.project_kgu_eats.data.MyPurchasing;
 
 import java.util.ArrayList;
 
 public class TabFrag_ticketList extends Fragment {
 
     RecyclerView recyclerView;
-    TicketListAdapter ticketListAdapter;
+
+    private ArrayList<MyPurchasing> myPurchasingArrayList = new ArrayList<>();
     @Override
     public View onCreateView(@Nullable LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -34,7 +33,8 @@ public class TabFrag_ticketList extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(ticketListAdapter);
+        recyclerView.setAdapter(LoginActivity.ticketListAdapter);
+
 
         return view;
     }

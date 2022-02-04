@@ -39,9 +39,9 @@ public class TicketListAdapter extends RecyclerView.Adapter<TicketListAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull TicketListAdapter.ViewHolder holder, int position) {
         MyPurchasing item =myPurchasingArrayList.get(position);
-//        holder.resName.setText(myPurchasingArrayList.get(position).name);
-//        holder.date.setText(myPurchasingArrayList.get(position).name);
-//        holder.isUsed.setText(myPurchasingArrayList.get(position).name);
+        holder.resName.setText(myPurchasingArrayList.get(position).getRestName());
+        holder.date.setText(myPurchasingArrayList.get(position).getDate());
+        holder.isUsed.setText(myPurchasingArrayList.get(position).getIsUsed());
     }
 
 

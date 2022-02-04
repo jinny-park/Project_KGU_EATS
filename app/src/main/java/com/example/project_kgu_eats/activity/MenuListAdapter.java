@@ -4,16 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project_kgu_eats.R;
-import com.example.project_kgu_eats.data.ResItem;
-import com.example.project_kgu_eats.data.menuItem;
-import com.example.project_kgu_eats.interface_structure.OnCardItemClickListener;
+import com.example.project_kgu_eats.data.MenuItem;
 import com.example.project_kgu_eats.interface_structure.OnClickMenuItemListener;
 
 import java.util.ArrayList;
@@ -22,10 +19,10 @@ public class MenuListAdapter extends RecyclerView.Adapter<MenuListAdapter.ViewHo
                                                                 implements OnClickMenuItemListener{
 
     private Context context;
-    private ArrayList<menuItem> menuList;
+    private ArrayList<MenuItem> menuList;
     public OnClickMenuItemListener menuListener;
 
-    public MenuListAdapter(Context context, ArrayList<menuItem> arrayList){
+    public MenuListAdapter(Context context, ArrayList<MenuItem> arrayList){
         this.context = context ;
         this.menuList= arrayList;
     }
@@ -40,7 +37,7 @@ public class MenuListAdapter extends RecyclerView.Adapter<MenuListAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull MenuListAdapter.ViewHolder holder, int position) {
-        menuItem menuItem =menuList.get(position);
+        MenuItem menuItem =menuList.get(position);
         holder.menuName.setText(menuList.get(position).getMenuName());
         holder.price.setText(menuList.get(position).getPrice());
     }
@@ -89,20 +86,20 @@ public class MenuListAdapter extends RecyclerView.Adapter<MenuListAdapter.ViewHo
 
     }
 
-    public void addItem(menuItem item){
+    public void addItem(MenuItem item){
         menuList.add(item);
     }
-    public void setarrayList(ArrayList<menuItem> arrayList) {
+    public void setarrayList(ArrayList<MenuItem> arrayList) {
 
         this.menuList = arrayList;
     }
 
-    public menuItem getItem(int position) {
+    public MenuItem getItem(int position) {
 
         return menuList.get(position);
     }
 
-    public void setItem(int position, menuItem item) {
+    public void setItem(int position, MenuItem item) {
 
         menuList.set(position, item);
     }

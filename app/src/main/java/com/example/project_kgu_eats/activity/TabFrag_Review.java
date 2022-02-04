@@ -6,25 +6,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ListView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project_kgu_eats.R;
-import com.example.project_kgu_eats.data.ResItem;
-import com.example.project_kgu_eats.data.review;
+import com.example.project_kgu_eats.data.ReviewItem;
 
 import java.util.ArrayList;
 
 public class TabFrag_Review extends Fragment {
     RecyclerView recyclerView;
-    ArrayList<review> reviewList = new ArrayList<>();
-    ReviewAdapter reviewAdapter = new ReviewAdapter(getContext(),reviewList);
+   private ArrayList<ReviewItem> reviewList = new ArrayList<>();
+
     Button reviewButton;
 
     @Override
@@ -39,7 +36,7 @@ public class TabFrag_Review extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(reviewAdapter);
+        recyclerView.setAdapter(LoginActivity.reviewAdapter);
 
         reviewButton = (Button) view.findViewById(R.id.review_btn);
         reviewButton.setOnClickListener(new View.OnClickListener() {
