@@ -4,10 +4,21 @@ public class MenuItem {
 
     String menuName;
     String price;
+    public int image;
 
-    public MenuItem(String menuName, String price) {
+
+    public MenuItem(String menuName, String price, int image) {
         this.menuName = menuName;
         this.price = price;
+        this.image = image;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
     }
 
     public String getMenuName() {

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -37,6 +38,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ViewHolder
         ReviewItem item =reviewList.get(position);
         holder.username.setText(reviewList.get(position).getUserName());
         holder.comment.setText(reviewList.get(position).getComment());
+        holder.reviewImage.setImageResource(reviewList.get(position).image);
     }
 
 
@@ -48,11 +50,13 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ViewHolder
     public static class ViewHolder extends RecyclerView.ViewHolder{
         TextView username;
         TextView comment;
+        ImageView reviewImage;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             username = itemView.findViewById(R.id.review_id);
             comment = itemView.findViewById(R.id.review_txt);
+            reviewImage = itemView.findViewById(R.id.review_img);
         }
 
     }

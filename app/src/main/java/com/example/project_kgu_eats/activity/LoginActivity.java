@@ -59,11 +59,11 @@ public class LoginActivity extends AppCompatActivity {
         AdapterBottomFrag1.addItem(new ResItem("이스퀘어", R.drawable.esquare));
         AdapterBottomFrag1.addItem(new ResItem("감성코어", R.drawable.gamco));
         AdapterBottomFrag1.addItem(new ResItem("기숙사식당", R.drawable.dorm));
-        menuListAdapter.addItem(new MenuItem("식권1","4500"));
-        menuListAdapter.addItem(new MenuItem("식권2","1500"));
-        reviewAdapter.addItem(new ReviewItem("202112345","좋아요"));
-        reviewAdapter.addItem(new ReviewItem("202112345","좋아요"));
-        reviewAdapter.addItem(new ReviewItem("202112345","좋아요"));
+        menuListAdapter.addItem(new MenuItem("식권1","4500",R.drawable.logo));
+        menuListAdapter.addItem(new MenuItem("식권2","1500",R.drawable.logo));
+        reviewAdapter.addItem(new ReviewItem("202112345","좋아요",R.drawable.kgu));
+        reviewAdapter.addItem(new ReviewItem("202112345","좋아요",R.drawable.kgu));
+        reviewAdapter.addItem(new ReviewItem("202112345","좋아요",R.drawable.kgu));
         ticketListAdapter.addItem(new MyPurchasing("교내식당1","2022년3월21일","사용완료"));
         ticketListAdapter.addItem(new MyPurchasing("교내식당2","2022년3월21일","사용완료"));
         ticketListAdapter.addItem(new MyPurchasing("교내식당2","2022년3월21일","사용완료"));

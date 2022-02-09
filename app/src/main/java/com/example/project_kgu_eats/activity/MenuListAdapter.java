@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -40,6 +41,7 @@ public class MenuListAdapter extends RecyclerView.Adapter<MenuListAdapter.ViewHo
         MenuItem menuItem =menuList.get(position);
         holder.menuName.setText(menuList.get(position).getMenuName());
         holder.price.setText(menuList.get(position).getPrice());
+        holder.menuImage.setImageResource(menuList.get(position).getImage());
     }
 
     public void setOnClickMenuItemListener(OnClickMenuItemListener listener){
@@ -63,12 +65,13 @@ public class MenuListAdapter extends RecyclerView.Adapter<MenuListAdapter.ViewHo
     public static class ViewHolder extends RecyclerView.ViewHolder{
         TextView menuName;
         TextView price;
+        ImageView menuImage;
 
         public ViewHolder(@NonNull View itemView,final OnClickMenuItemListener menuListener) {
             super(itemView);
             menuName = itemView.findViewById(R.id.menu_name);
             price = itemView.findViewById(R.id.menu_price);
-
+            menuImage = itemView.findViewById(R.id.menu_img);
             itemView.setClickable(true);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

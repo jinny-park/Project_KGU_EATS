@@ -4,11 +4,20 @@ public class ReviewItem {
 
     String userName;
     String comment;
+    public int image;
 
+    public int getImage() {
+        return image;
+    }
 
-    public ReviewItem(String userName, String comment) {
+    public void setImage(int image) {
+        this.image = image;
+    }
+
+    public ReviewItem(String userName, String comment, int image) {
         this.userName = userName;
         this.comment = comment;
+        this.image = image;
     }
 
     public String getUserName() {
