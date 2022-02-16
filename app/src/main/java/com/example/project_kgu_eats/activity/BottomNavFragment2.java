@@ -1,6 +1,5 @@
 package com.example.project_kgu_eats.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,13 +8,9 @@ import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project_kgu_eats.R;
-import com.example.project_kgu_eats.interface_structure.OnCardItemClickListener;
 import com.google.android.material.tabs.TabLayout;
 
 public class BottomNavFragment2 extends Fragment {
@@ -23,7 +18,7 @@ public class BottomNavFragment2 extends Fragment {
 
     RecyclerView recyclerView;
     TabFrag_ticketList tabFrag_ticketList;
-    TabFrag_MyTicket tabFrag_myTicket;
+    TabFrag_MyTicket_Store tabFrag_myTicket;
     public void onCreate(Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);
@@ -38,7 +33,7 @@ public class BottomNavFragment2 extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_mypage_tab,null);
         tabFrag_ticketList = new TabFrag_ticketList();
-        tabFrag_myTicket = new TabFrag_MyTicket();
+        tabFrag_myTicket = new TabFrag_MyTicket_Store();
         getFragmentManager().beginTransaction().replace(R.id.tabs_my_container,tabFrag_myTicket).commit();
 
 

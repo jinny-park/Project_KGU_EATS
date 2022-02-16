@@ -56,6 +56,11 @@ public class AdapterBottomFrag1 extends RecyclerView.Adapter<AdapterBottomFrag1.
         }
     }
 
+    @Override
+    public void onCardClick(MyTicket_TicketList_Adapter.ViewHolder holder, View view, int position) {
+
+    }
+
 
     @Override
     public int getItemCount() {
@@ -69,7 +74,7 @@ public class AdapterBottomFrag1 extends RecyclerView.Adapter<AdapterBottomFrag1.
         public ViewHolder(@NonNull View itemView, final OnCardItemClickListener listener) {
             super(itemView);
             imageView = itemView.findViewById(R.id.view_item);
-            textView = itemView.findViewById(R.id.menu_name);
+            textView = itemView.findViewById(R.id.res_name);
 
             itemView.setClickable(true);
             itemView.setOnClickListener(new View.OnClickListener() {

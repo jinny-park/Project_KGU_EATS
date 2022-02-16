@@ -11,6 +11,7 @@ import android.widget.Button;
 import com.example.project_kgu_eats.R;
 import com.example.project_kgu_eats.data.MenuItem;
 import com.example.project_kgu_eats.data.MyPurchasing;
+import com.example.project_kgu_eats.data.MyTicket;
 import com.example.project_kgu_eats.data.ResItem;
 import com.example.project_kgu_eats.data.ReviewItem;
 
@@ -22,12 +23,14 @@ public class LoginActivity extends AppCompatActivity {
     ArrayList<MenuItem> menuItemArrayList = new ArrayList<>();
     ArrayList<MyPurchasing> myPurchasingArrayList = new ArrayList<>();
     ArrayList<ReviewItem> reviewItemArrayList = new ArrayList<>();
+    ArrayList<MyTicket> myTicketArrayList =new ArrayList<>();
 
 
     static AdapterBottomFrag1 AdapterBottomFrag1 ;
     static ReviewAdapter reviewAdapter;
     static TicketListAdapter ticketListAdapter;
     static MenuListAdapter menuListAdapter;
+    static MyTicket_TicketList_Adapter myTicket_ticketList_adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         reviewAdapter = new ReviewAdapter(getApplicationContext(), reviewItemArrayList);
         ticketListAdapter = new TicketListAdapter(getApplicationContext(), myPurchasingArrayList);
         menuListAdapter = new MenuListAdapter(getApplicationContext(), menuItemArrayList);
+        myTicket_ticketList_adapter = new MyTicket_TicketList_Adapter(getApplicationContext(),myTicketArrayList);
         setData();
     }
 
@@ -61,13 +65,13 @@ public class LoginActivity extends AppCompatActivity {
         AdapterBottomFrag1.addItem(new ResItem("기숙사식당", R.drawable.dorm));
         menuListAdapter.addItem(new MenuItem("식권1","4500",R.drawable.logo));
         menuListAdapter.addItem(new MenuItem("식권2","1500",R.drawable.logo));
-        reviewAdapter.addItem(new ReviewItem("202112345","좋아요",R.drawable.kgu));
-        reviewAdapter.addItem(new ReviewItem("202112345","좋아요",R.drawable.kgu));
-        reviewAdapter.addItem(new ReviewItem("202112345","좋아요",R.drawable.kgu));
-        ticketListAdapter.addItem(new MyPurchasing("교내식당1","2022년3월21일","사용완료"));
-        ticketListAdapter.addItem(new MyPurchasing("교내식당2","2022년3월21일","사용완료"));
-        ticketListAdapter.addItem(new MyPurchasing("교내식당2","2022년3월21일","사용완료"));
-        ticketListAdapter.addItem(new MyPurchasing("교내식당1","2022년3월21일","사용완료"));
+        reviewAdapter.addItem(new ReviewItem("202112345","좋아요",R.drawable.food));
+        reviewAdapter.addItem(new ReviewItem("202112346","좋아요",R.drawable.food));
+        ticketListAdapter.addItem(new MyPurchasing("이스퀘어","2022년3월21일","사용완료"));
+        ticketListAdapter.addItem(new MyPurchasing("감성코어","2022년3월21일","사용완료"));
+        ticketListAdapter.addItem(new MyPurchasing("감성코어","2022년3월21일","사용완료"));
+        ticketListAdapter.addItem(new MyPurchasing("기숙사식당","2022년3월21일","사용완료"));
+        myTicket_ticketList_adapter.addItem(new MyTicket(R.drawable.esquare,"이스퀘어","2개"));
     }
 
 }

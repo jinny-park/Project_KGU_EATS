@@ -25,6 +25,10 @@
         <activity android:name=".activity.NavigationActivity" />
         <activity android:name=".activity.MainTabActivity" />
         <activity android:name=".activity.ReviewAddActivity" />
+        <activity android:name=".activity.MyTicket_TicketList_Activity"/>
+        <activity android:name=".activity.QrCodeActivity"/>
+        <activity android:name=".activity.CartActivity"/>
+        <activity android:name=".activity.PaymentActivity"/>
 
     </application>
 </manifest>
